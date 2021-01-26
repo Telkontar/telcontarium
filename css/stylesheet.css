@@ -1,0 +1,465 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+	/* This defines what 1rem is */
+	font-size: 62.5%;
+	background-color: black;
+	background-image: url(../images/darkwood.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	color: silver;
+	font-family: Garamond, /*"Times New Roman", Georgia,*/ serif;
+	height: 100%;
+}
+html::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 2.0rem;  /*  from 1.6 */
+	background-color: rgb(0, 0, 0, 0.00);
+	/*background: -webkit-linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.5));*/
+	/*height: 100%;*/
+}
+
+
+header{
+	text-align: center;
+	color: goldenrod;
+	height: 15rem;
+	padding: 1.5rem;
+	text-transform: lowercase;
+	font-family: "Moria Citadel", Luminari;
+	font-size: 3.0rem; /*  from 3.0 */
+	font-weight: bold;
+	text-shadow: 0.5rem 0.5rem 0.75rem black;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	height: 7.5%;
+	width: 100%;
+	background: rgb(0, 0, 0, 1.00);
+	border: 1px black solid;
+	text-align: center;
+	padding: 1rem;
+	color: silver;
+}
+
+a {
+    /*color: red;*/
+}
+
+p {
+	padding: 1.00rem;
+}
+
+.headerlogolink {
+	text-decoration: none;
+	color: goldenrod;
+}
+
+main {
+	/*margin: 1rem;
+	padding: 1rem;
+	background: rgb(0, 0, 0, 0.5);*/
+}
+
+
+/* Navigation */
+.main-navigation {
+	display: none;
+	background: rgb(0, 0, 0, 0.5);
+	border-top: 1px goldenrod solid;
+	/*display: flex;*/
+	align-items: center;
+	justify-content: center;
+	transition: background 1s;
+	z-index: 999;
+	position: fixed;
+	width: 100%;
+}
+
+.main-navigation a {
+	color: goldenrod;
+}
+
+.list-group {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.list-item {
+	/*background: red;*/
+	cursor: pointer;
+	width: 100%;
+}
+
+
+.list-item-link {
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+.list-item-link:hover, .list-item-link:focus-within {
+	background: rgb(255, 255, 255, 0.25);
+}
+
+.dropdown-menu {
+	display: none;
+}
+
+.list-item:hover > .dropdown-menu, .list-item:focus-within > .dropdown-menu {
+	display: block;
+}
+
+.list-item:hover, .list-item:focus-within {
+	/*background: rgb(255, 255, 255, 0.125);*/
+	/*color: lightskyblue;*/
+	text-decoration: none;
+}
+
+.dropdown-trigger--right {
+	position: relative;
+}
+
+.dropdown-menu--right {
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0;
+}
+
+.dropdown-trigger--right:hover > .dropdown-menu--right, .dropdown-trigger--right:focus-within > .dropdown-menu--right {
+	display: block;
+}
+
+/* Content divs and containers */ 
+
+.higher-wrapper, .lower-wrapper, .disclaimer-wrapper {
+	margin: auto;
+	margin-bottom: 5rem;
+	padding: 1.0rem 2.5rem;
+	padding-bottom: 5rem;
+	height: 100%;
+	width: 75%;
+	background: rgb(0, 0, 0, 0.5);
+	outline: 2px solid black;
+	/*background-position: ;*/
+	/*background-size: ;*/
+}
+
+.content {
+	padding: 0.5rem 1.00rem;
+	margin: 0.5rem 1.00rem;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+
+.menucontent {
+	/*padding: 0rem;*/
+	/*height: 10rem;*/
+	/*position: relative;*/
+	width: fit-content;
+    background: transparent;
+	display: flex;
+	margin: auto;
+	z-index: 999;
+}
+
+/* Floating menu */
+ul.slide-menu {
+	margin: auto;
+	padding: 0;
+	list-style: none;
+	font-family: "Ruritania", "Myriad Pro", "Trebuchet MS", sans-serif; /*"Moria Citadel",*/
+	font-size: 1.5rem;
+	width: 100%;
+}
+ul.slide-menu a{
+	text-decoration: none;
+	outline: none;
+}
+ul.slide-menu li{
+	/*float: left;*/
+	display: inline-flex;
+	width: 20rem;
+	height: 10rem;
+	position: relative;
+	cursor: pointer;
+	background: rgb(0, 0, 0, 0.5);
+}
+ul.slide-menu li > a {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 20rem;
+	height: 10rem;
+	z-index: 12;
+	background: transparent;
+	-moz-box-shadow: 0px 0px 2px black inset;
+	-webkit-box-shadow: 0px 0px 2px black inset;
+	box-shadow: 0px 0px 2px black inset;
+}
+ul.slide-menu li a img{
+	/*border: none;*/
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	bottom: 0px;
+	left: 10rem;
+	z-index: 100;
+	-moz-box-shadow: 0px 0px 4px goldenrod;
+	-webkit-box-shadow: 0px 0px 4px goldenrod;
+	box-shadow: 0px 0px 4px goldenrod;
+}
+ul.slide-menu li span.slide-wrap{
+	position: absolute;
+	top: 2.5rem;
+	left: 0px;
+	width: 20rem;
+	height: 10rem;
+	z-index: 15;
+}
+ul.slide-menu li span.slide-active {
+	position: absolute;
+	background: rgb(0, 0, 0, 0.5);
+	top: 10rem;
+	width: 20rem;
+	height: 0px;
+	left: 0px;
+	z-index: 14;
+	-moz-box-shadow: 0px 0px 4px goldenrod;
+	-webkit-box-shadow: 0px 0px 4px goldenrod;
+	box-shadow: 0px 0px 4px goldenrod;
+}
+ul.slide-menu li span span.slide-link,
+ul.slide-menu li span span.slide-description,
+ul.slide-menu li div.slide-box a{
+	margin-left: 1.5rem;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px #000;
+}
+ul.slide-menu li span span.slide-link{
+	color: silver;
+	font-size: 2.0rem;
+	display: inline-flex;
+	/*float: left;*/
+	clear: both;
+}
+ul.slide-menu li span span.slide-description {
+	color:goldenrod;
+	/*float:left;*/
+	display: block;
+	clear:both;
+	/*width: 15.5rem; *//*For dumbass IE7*/
+	font-size: 1.25rem;
+	letter-spacing: 0.125rem;
+}
+ul.slide-menu li div.slide-box {
+	display: block;
+	position: absolute;
+	width: 20rem;
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 20rem;
+	top: 10rem;
+	left: 0px;
+	display: none;
+	background: rgb(0, 0, 0, 0.75);
+}
+
+ul.slide-menu li div.slide-box::-webkit-scrollbar {
+	display: none;
+}
+ul.slide-menu li div.slide-box a {
+	/*float:left;*/
+	display: block;
+	clear:both;
+	line-height: 3rem;
+	color:goldenrod;
+}
+ul.slide-menu li div.slide-box a:first-child{
+	margin-top: 1.5rem;
+}
+ul.slide-menu li div.slide-box a:hover{
+	color: silver;
+}
+
+
+.album-artwork {
+	width: 450px;
+	height: 900px;
+	margin: auto;
+	outline: 2px goldenrod solid;
+	display: flex;
+	flex-wrap: wrap;
+	box-shadow: 1.0rem 1.0rem rgb(255, 255, 255, 0.25);
+}
+
+.album-artwork a {
+	line-height: 0;
+}
+
+.main-image {
+	width: 450px;
+	height: 450px;
+}
+
+.side-image {
+	width: 150px;
+	height: 150px;
+	}
+
+/*.main-image:hover {
+	transform: scale(1.00); 1.0 makes it irrelevant keep it in case of change
+	box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+} */
+
+.side-image:hover {
+	transform: scale(3);
+	transition-delay: 1s;
+}
+
+.yearlytoplist {
+	padding: 1.25rem;
+	/*color: red;*/
+	text-align: center;
+	list-style-position: inside;
+}
+
+.yearlytoplist h3, h4 {
+	padding: 0.75rem;
+	
+}
+
+.yearlylistlinks {
+	padding-top: 1.0rem;
+	padding-bottom: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.linkcontainer{
+	width: 20rem;
+	display: inline-block;
+	padding: 0.75rem;
+	margin: 0.75rem;
+	font-size: 1.75rem;
+	text-transform: uppercase;
+	text-shadow: 0.25rem 0.25rem 0.75rem goldenrod;
+	outline: 1px rgb(255, 215, 0, 0.75) solid;
+}
+
+.spotifylink {
+	text-decoration: none;
+	color: silver;
+
+}
+
+.metalstormlink {
+	text-decoration: none;
+	color: silver;
+}
+
+.yearlytoplist-h3heading {
+	text-align: center;
+	padding: 0.75rem;
+	font-size: 2.75rem;  /*  from 2.0 */
+	text-shadow: 0.5rem 0.5rem 1.00rem silver;
+}
+
+.yearlytoplist-heading {
+	font-size: 2.00rem;  /*  from 1.75 */
+}
+
+.yearlytoplist-unordered {
+	list-style: none;
+}
+
+.yearlytoplist-ordered {
+	padding-bottom: 1.00rem;
+}
+.toplist-item-hidden::before {
+	content: "Hidden Gem: ";
+}
+.toplist-item-surprise::before {
+	content: "Surprise: ";
+}
+.toplist-item-nonmetal::before {
+	content: "Non-metal: ";
+}
+.toplist-item-letdown::before {
+	content: "Letdown: ";
+	color: red;
+}
+.toplist-item-serbian::before {
+	content: "Serbian: ";
+}
+.toplist-item-dvd::before {
+	content: "DVD: ";
+}
+
+/* tablet change to 480 */
+@media only screen and (min-width: 680px) and (max-width: 960px) {
+	.my-body {
+		font-size: 5.5rem;
+		color: red;
+	}
+}
+
+/* mobile change to 480 */
+@media only screen and (max-width: 680px) {
+	/*.myheader {
+		height: 15rem;
+		padding: 1.5rem;
+		text-transform: lowercase;
+		font-family: "Moria Citadel", Luminari;
+		font-size: 3.0rem;
+		font-weight: bold;
+		text-shadow: 0.5rem 0.5rem 0.75rem black;
+	}*/
+	html {
+
+	}
+	.my-body {
+		font-size: 1.0rem;
+		color: green;
+		width: 100%;
+	}
+	.menucontent {
+		display: none;
+	}
+	.higher-wrapper, .lower-wrapper, .disclaimer-wrapper {
+		width: 500px;
+	}
+	.album-artwork {
+		width: 225px;
+		height: 450px;
+	}
+	.main-image {
+		width: 225px;
+		height: 225px;
+	}
+	.side-image {
+		width: 75px;
+		height: 75px;
+	}
+	
+	.side-image:hover {
+		transform: none;
+		/*transition-delay: 1s;*/
+	}
+}
